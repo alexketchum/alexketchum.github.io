@@ -1,0 +1,72 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::before, *, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #202b38;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    min-height: 100vh;
+    padding-top: 3em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+main, header, footer {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+main {
+    flex-grow: 1;
+}
+
+header {
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+section ul {
+    list-style-type: none;
+}
+
+[title="leaf icons"] {
+    font-size: 0.9em;
+}
+
+/* header {
+    margin: 0 auto;
+    margin-bottom: 3em;
+    width: 1200px;
+} */
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    gap: 0 1em
+}
+
+nav ul li:not(:last-of-type)::after {
+    content: "/";
+    margin-left: 1em;
+}
+
+a {
+    color: #41adff;
+    text-decoration: none;
+}
+
+a[aria-current="page"] {
+    font-weight: bold;
+}
