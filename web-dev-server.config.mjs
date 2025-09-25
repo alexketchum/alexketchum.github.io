@@ -1,6 +1,6 @@
 export default {
     open: true,
-    // rootDir: "public",
-    port: 3000,
+    rootDir: "public",
+    port: 5000,
     watch: true,
 }

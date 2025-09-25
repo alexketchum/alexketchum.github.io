@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*::before, *, *::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --width: 560px;
+    --link-color: #41adff;
+    --link-color-rgb: 65, 173, 255;
+}
+
+body {
+    background-color: #202b38;
+    color: white;
+    font-family: Seravek, 'Gill Sans Nova', Ubuntu, Calibri, 'DejaVu Sans', source-sans-pro, sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 3em 1em 0 1em;
+
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-bottom: 0.5em;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+
+    &[aria-current="page"] {
+        font-weight: bold;
+    }
+
+    &:hover {
+        color: rgba(var(--link-color-rgb), 0.75)
+    }
+}
+
+header, footer {
+    margin: 0 auto;
+    max-width: var(--width);
+}
+
+header {
+    margin-bottom: 3em;
+    width: 100%;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    gap: 0 1em;
+    justify-content: center;
+    margin-bottom: 1em;
+
+    img {
+        display: block;
+        width: 24px;
+    }
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+
+    li:not(:last-of-type)::after {
+        content: "/";
+        margin: 0 1em;
+    }
+}
+
+main {
+    display: grid;
+    grid-template-columns: 
+        [full-start] 1fr
+        [wrapper-start] minmax(auto, var(--width)) [wrapper-end]
+        1fr [full-end];
+    
+    & > * {
+        grid-column: wrapper;
+    }
+}
+
+section {
+    margin-bottom: 2em;
+
+    ul {
+        list-style-type: none;
+        
+        li {
+            margin: 0.5em 0;
+        }
+    }
+}
+
+.breakout {
+    grid-column: full;
+}
+
+.images {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    margin: 0 auto 2em;
+    max-width: 960px;
+
+    img {
+        height: 350px;
+        object-fit: contain;
+        width: 100%;
+    }
+}
+
+.site-link {
+    border-bottom: solid 1px;
+    padding-bottom: 0.5em;
+}
